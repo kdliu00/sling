@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>gmshare_doc</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Share 1.0.11</h1>
+
+<h4 id="toc_1">A <em>GameMaker: Studio</em> extension developed by Beneton Software</h4>
+
+<ul>
+<li><a href="https://marketplace.yoyogames.com/publishers/65/beneton-software">More Extensions</a></li>
+<li><a href="https://marketplace.yoyogames.com/publishers/65/beneton-software/contact?asset=1258">Contact Us</a></li>
+</ul>
+
+<h2 id="toc_2">Table of Contents</h2>
+
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#constants">Constants</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#changelog">Changelog</a></li>
+</ul>
+
+<p><a name="requirements"></a></p>
+
+<h2 id="toc_3">Requirements</h2>
+
+<p>This extension was fully tested on GameMaker: Studio v1.4.1772, compiling for the following targets: iOS, iOS (YYC), Android / Fire, and Android / Fire (YYC). It was also successfully tested with GameMaker Studio 2 for Windows (v2.0.7.171), although it is not officially supported at the moment.</p>
+
+<h3 id="toc_4">iOS</h3>
+
+<ul>
+<li>Xcode 8.0</li>
+<li>iOS 8+</li>
+</ul>
+
+<h3 id="toc_5">Android</h3>
+
+<ul>
+<li>Build Tools: 24+</li>
+<li>Support Lib: 23.2.1+</li>
+<li>Support Repository: 35+</li>
+<li>Target SDK/Compile SDK: 23+</li>
+<li>Min SDK: 9+ (Android 2.3+)</li>
+<li>Android NDK: 12b</li>
+<li>Java JDK: 1.8 (8u102)</li>
+<li>Visual Studio Express 2012</li>
+</ul>
+
+<p><a name="getting-started"></a></p>
+
+<h2 id="toc_6">Getting Started</h2>
+
+<p>This extension package contains an example, in the form of GameMaker: Studio resources (sprites, objects, rooms, etc.) that can be imported in your project. This example is completely optional; it is meant to showcase what can be achieved with the extension, as well as help get familiarized with its functionality and quickly dive into the code. It is not meant to be used “as is”, and it doesn’t replace this documentation. If you wish to check out the example, we recommend adding the extension to an empty project, importing all the resources, moving the room that fits your device (phone or tablet) to the first position, and running it on your iOS or Android device (note: for Android, you have to create a full APK).</p>
+
+<p>There are two ways to share things with the Share extension: the simple functions (just one line of code to share some text, a URL, an image, or a file) as well as the more elaborate and more powerful advanced functions, which are prefixed by <code>share_ext_</code>. So it can be as simple as:</p>
+
+<div><pre><code class="language-none">share_image(&quot;screenshot.png&quot;);</code></pre></div>
+
+<p>or as customized as:</p>
+
+<div><pre><code class="language-none">share_ext_prepare();
+share_ext_add_image(&quot;screenshot.png&quot;);
+share_ext_add_text(&quot;I just scored &quot; + str(score) + &quot;!&quot;);
+share_ext_add_url(&quot;http://your-game-url.com&quot;);
+share_ext_set_activity(ACTIVITY_TYPE_TWITTER);
+share_ext_launch();</code></pre></div>
+
+<p>Please note that in both cases, the file <code>screenshot.png</code> must exist in the save area to be shared properly (please read the “File System Limits” section of the GameMaker: Studio manual if you don’t know what that is).</p>
+
+<p>In other words, the <code>share_ext_*</code> functions give you more control such as the ability to share more than one item at once and set an activity to share with, as opposed to letting the user choose (see the “Constants” section of this document for a list of all supported activities).</p>
+
+<p>Below is the complete list of functions. If you are experiencing any issue, please make sure to check out the “Troubleshooting” section at the bottom of this document. If you don’t find an answer to your question, don’t hesitate to contact us through the YoYo Games Marketplace (link at the top). Thank you!</p>
+
+<p><a name="functions"></a></p>
+
+<h2 id="toc_7">Functions</h2>
+
+<div><pre><code class="language-none">share_text(text)</code></pre></div>
+
+<p>Opens the activity chooser to share a string as plain text.</p>
+
+<p><em>String</em> <code>text</code> The text to share.</p>
+
+<div><pre><code class="language-none">share_text_ext(text, subject, email)</code></pre></div>
+
+<p>Opens the activity chooser to share a string as plain text, accepting extra information that is used if the user chooses to share by email (or any app that supports “subject” and/or “email” parameters).</p>
+
+<p><em>String</em> <code>text</code> The text to share.</p>
+
+<p><em>String</em> <code>subject</code> The subject of the email/message.</p>
+
+<p><em>String</em> <code>email</code> The email address to put by default in the “To” field (this argument only takes effect on Android; use <code>share_ext_add_recipient()</code> if you want that functionality on iOS).</p>
+
+<div><pre><code class="language-none">share_url(url)</code></pre></div>
+
+<p>Opens the activity chooser to share a URL. This function gives different share options than <code>share_text()</code> on iOS, but on Android it does exactly the same thing.</p>
+
+<p><em>String</em> <code>url</code> The URL to share.</p>
+
+<div><pre><code class="language-none">share_image(filename)</code></pre></div>
+
+<p>Opens the activity chooser to share an image. Note: The file must be located in the “save area” of your game, so if it part of your bundle (i.e. in your “Included Files”), you must copy it to the save area first. Read the “File System Limits” section of the GameMaker: Studio manual for more information.</p>
+
+<p><em>String</em> <code>filename</code> The filename of the image to share (without the path).</p>
+
+<div><pre><code class="language-none">share_file(filename)</code></pre></div>
+
+<p>Opens the activity chooser to share a file (any format). Read the note in <code>share_image()</code>.</p>
+
+<p><em>String</em> <code>filename</code> The filename of the file to share (without the path).</p>
+
+<div><pre><code class="language-none">share_set_popover_origin(x, y)</code></pre></div>
+
+<p><em>iOS only</em></p>
+
+<p>Sets the origin of the share popover to a single point on the screen. The popover only appears on iPad as it takes the form of a panel sliding from the bottom of the screen on iPhone/iPod Touch. Note: The positions are in points, not pixels. To convert between the two units, you can use the <a href="https://marketplace.yoyogames.com/assets/5631/ios-points">iOS Points extension</a>.</p>
+
+<p><em>Real</em> <code>x</code></p>
+
+<p><em>Real</em> <code>y</code></p>
+
+<div><pre><code class="language-none">share_set_popover_region(x, y, width, height)</code></pre></div>
+
+<p><em>iOS only</em></p>
+
+<p>Sets the origin of the share popover to a rectangle on the screen. If you use this function, it overrides <code>share_set_popover_origin()</code> (and vice versa). This one is more powerful because you can define a rectangle to be a region of interest that you are certain the popover will not appear over.</p>
+
+<p><em>Real</em> <code>x</code></p>
+
+<p><em>Real</em> <code>y</code></p>
+
+<p><em>Real</em> <code>width</code></p>
+
+<p><em>Real</em> <code>height</code></p>
+
+<div><pre><code class="language-none">share_set_dialog_title(title)</code></pre></div>
+
+<p><em>Android only</em></p>
+
+<p>Changes the title of the share dialog. The default title is <code>&quot;Share using&quot;</code>.</p>
+
+<p><em>String</em> <code>title</code> The new title of the share dialog.</p>
+
+<div><pre><code class="language-none">share_did_finish()</code></pre></div>
+
+<p>Returns whether the share process ended since the last call to this function. It does not necessarily mean that it ended successfully; for that you need to call <code>share_get_completed()</code>.</p>
+
+<p>Returns: <em>Boolean</em></p>
+
+<div><pre><code class="language-none">share_get_completed()</code></pre></div>
+
+<p>Returns whether the user completed the last share operation without cancelling. It does not necessarily mean the share was successful at the server level (unfortunately there is no way to detect that with the activity view). Note: On Android, this function often returns <code>false</code> even when the operation was successful. This is because Android’s <code>startActivityForResult()</code> &quot;should only be used with Intent protocols that are defined to return a result&quot;, and unfortunately the protocol used for sharing (<code>ACTION_SEND</code>) is not. Some activities still return a result, but overall this function is not reliable.</p>
+
+<p>Returns: <em>Boolean</em></p>
+
+<div><pre><code class="language-none">share_get_chosen_activity()</code></pre></div>
+
+<p><em>iOS only</em></p>
+
+<p>Returns the activity type the user chose for the last share operation.</p>
+
+<p>Returns: <em>Real</em> The chosen activity type; one of the <code>ACTIVITY_TYPE_*</code> constants.</p>
+
+<div><pre><code class="language-none">share_get_chosen_activity_string()</code></pre></div>
+
+<p><em>iOS only</em></p>
+
+<p>When <code>share_get_chosen_activity()</code> returns <code>ACTIVITY_TYPE_OTHER</code>, this function can be used to get more information on the app selected by the user.</p>
+
+<p>Returns: <em>String</em> A unique identifier for the chosen activity (example: <code>&quot;com.evernote.iPhone.Evernote.EvernoteShare&quot;</code>).</p>
+
+<div><pre><code class="language-none">share_ext_prepare()</code></pre></div>
+
+<p>Prepares a more advanced share operation. This function must be called before any of the other <code>share_ext_*</code> functions. With these functions you can share a piece of text with multiple images, for instance. You can also force an activity such as Facebook or Twitter instead of letting the user choose, with <code>share_ext_set_activity()</code>. After you have set all the parameters you want, you can launch the share operation you prepared with <code>share_ext_launch()</code>.</p>
+
+<div><pre><code class="language-none">share_ext_add_text(text)</code></pre></div>
+
+<p>Adds a string of plain text to the current share operation.</p>
+
+<p><em>String</em> <code>text</code> The text to share.</p>
+
+<div><pre><code class="language-none">share_ext_add_url(url)</code></pre></div>
+
+<p>Adds a URL to the current share operation.</p>
+
+<p><em>String</em> <code>url</code> The URL to share.</p>
+
+<div><pre><code class="language-none">share_ext_add_image(filename)</code></pre></div>
+
+<p>Adds an image to the current share operation. Read the note in <code>share_image()</code>.</p>
+
+<p><em>String</em> <code>filename</code> The filename of the image to share (without the path).</p>
+
+<div><pre><code class="language-none">share_ext_add_file(filename)</code></pre></div>
+
+<p>Adds a file (any format) to the current share operation. Read the note in <code>share_image()</code>.</p>
+
+<p><em>String</em> <code>filename</code> The filename of the file to share (without the path).</p>
+
+<div><pre><code class="language-none">share_ext_set_activity(activity_type)</code></pre></div>
+
+<p>Sets the activity to use for the current share operation. Only the following activity types are supported by this function: <code>ACTIVITY_TYPE_FACEBOOK</code>, <code>ACTIVITY_TYPE_TWITTER</code>, <code>ACTIVITY_TYPE_WEIBO</code> (iOS only), <code>ACTIVITY_TYPE_MESSAGE</code>, and <code>ACTIVITY_TYPE_MAIL</code>. When you use this function, <code>share_ext_launch()</code> skips the activity chooser and goes straight to the given activity (if available), except for <code>ACTIVITY_TYPE_MESSAGE</code> and <code>ACTIVITY_TYPE_MAIL</code> on Android where the chooser still appears. Note: When setting the activity to <code>ACTIVITY_TYPE_MESSAGE</code> on Android, you can only share text and URLs (no images or files).</p>
+
+<p><em>Real</em> <code>activity_type</code> The activity type to use; one of the <code>ACTIVITY_TYPE_*</code> constants.</p>
+
+<div><pre><code class="language-none">share_ext_exclude_activity(activity_type)</code></pre></div>
+
+<p><em>iOS only</em></p>
+
+<p>Excludes an activity from the activity chooser for the current share operation. You can exclude multiple activities for the same share operation; just call this function multiple times.</p>
+
+<p><em>Real</em> <code>activity_type</code> The activity type to exclude; one of the <code>ACTIVITY_TYPE_*</code> constants.</p>
+
+<div><pre><code class="language-none">share_ext_set_subject(subject)</code></pre></div>
+
+<p>Sets the subject of the email/message for the current share operation. Only a few activities consider this value.</p>
+
+<p><em>String</em> <code>subject</code> The subject of the email/message.</p>
+
+<div><pre><code class="language-none">share_ext_add_recipient(email_address)</code></pre></div>
+
+<p>Adds a recipient to the email/message for the current share operation. On iOS, only <code>ACTIVITY_TYPE_MESSAGE</code> and <code>ACTIVITY_TYPE_MAIL</code> consider this value, and on Android, only a few applications do.</p>
+
+<p><em>String</em> <code>email_address</code> The recipient’s email address.</p>
+
+<div><pre><code class="language-none">share_ext_set_body_is_html(true_or_false)</code></pre></div>
+
+<p>Sets whether the body text of the current share operation (set by <code>share_ext_add_text()</code>) should be treated as HTML. The default is <code>false</code>.</p>
+
+<p><em>Boolean</em> <code>true_or_false</code> Set to <code>true</code> for HTML, or <code>false</code> for plain text.</p>
+
+<div><pre><code class="language-none">share_ext_set_intent_action(intent_action)</code></pre></div>
+
+<p><em>Android only</em></p>
+
+<p>Sets the action to use in the underlying Intent object on Android. The default is <code>INTENT_ACTION_SEND</code>. If set to <code>INTENT_ACTION_VIEW</code>, whatever application you or the user chooses will simply open the selected image or file, rather than guiding the user to share it.</p>
+
+<p><em>Real</em> <code>intent_action</code> The intent action to use; one of the <code>INTENT_ACTION_*</code> constants.</p>
+
+<div><pre><code class="language-none">share_ext_launch()</code></pre></div>
+
+<p>Launches the current share operation with all the parameters that were set since the last call to <code>share_ext_prepare()</code>. The function returns <code>false</code> when it fails to show anything to the user. That can happen when the activity is set to <code>ACTIVITY_TYPE_FACEBOOK</code> or <code>ACTIVITY_TYPE_TWITTER</code> and the user does not have the required application installed on his device, or on iOS when the activity is set to <code>ACTIVITY_TYPE_MAIL</code> and there is no email account listed on the device.</p>
+
+<p>Returns: <em>Boolean</em> Whether the share operation was successfully initiated.</p>
+
+<p><a name="constants"></a></p>
+
+<h2 id="toc_8">Constants</h2>
+
+<h3 id="toc_9">Activity Types</h3>
+
+<ul>
+<li><code>ACTIVITY_TYPE_NONE</code></li>
+<li><code>ACTIVITY_TYPE_FACEBOOK</code></li>
+<li><code>ACTIVITY_TYPE_TWITTER</code></li>
+<li><code>ACTIVITY_TYPE_WEIBO</code></li>
+<li><code>ACTIVITY_TYPE_MESSAGE</code></li>
+<li><code>ACTIVITY_TYPE_MAIL</code></li>
+<li><code>ACTIVITY_TYPE_PRINT</code></li>
+<li><code>ACTIVITY_TYPE_COPY</code></li>
+<li><code>ACTIVITY_TYPE_ASSIGN_TO_CONTACT</code></li>
+<li><code>ACTIVITY_TYPE_SAVE</code></li>
+<li><code>ACTIVITY_TYPE_READING_LIST</code></li>
+<li><code>ACTIVITY_TYPE_FLICKR</code></li>
+<li><code>ACTIVITY_TYPE_VIMEO</code></li>
+<li><code>ACTIVITY_TYPE_TENCENT_WEIBO</code></li>
+<li><code>ACTIVITY_TYPE_AIRDROP</code></li>
+<li><code>ACTIVITY_TYPE_OTHER</code></li>
+</ul>
+
+<h3 id="toc_10">Intent Actions</h3>
+
+<ul>
+<li><code>INTENT_ACTION_SEND</code></li>
+<li><code>INTENT_ACTION_VIEW</code></li>
+</ul>
+
+<p><a name="troubleshooting"></a></p>
+
+<h2 id="toc_11">Troubleshooting</h2>
+
+<h4 id="toc_12">The functions don’t seem to do anything on Android.</h4>
+
+<p>This is most likely because you are using the command “Run the game” (or “Run in debug mode”) instead of “Create Executable for Target”. GameMaker: Studio requires to create a full APK for extensions to work (this is not the case on iOS).</p>
+
+<h4 id="toc_13">Sharing text on Facebook doesn’t work.</h4>
+
+<p>Unfortunately, that is not a bug, it is <a href="https://developers.facebook.com/bugs/962985360399542/">“by design”</a>. Facebook doesn’t want you to “pre-fill the user message parameter with any content the user didn’t enter themselves”. On iOS, however, there is a workaround that consists of entering a hashtag, so as long as the string you pass to <code>share_text()</code> or <code>share_ext_add_text()</code> starts with the <code>#</code> character and doesn’t contain any spaces, it will be added to the post. Unfortunately this does’t seem to work on Android at the moment. Of course, you can still share URLs and images (although not together because there’s a limit of one “attachment” per Facebook post).</p>
+
+<h4 id="toc_14">I want to share a screenshot of my game but the screenshot is black or missing.</h4>
+
+<p>Please refer to the included example “Take screenshot and share on Facebook”. You should save the <code>application_surface</code> with <code>surface_save()</code> and share the resulting PNG image.</p>
+
+<h4 id="toc_15">I want to share multiple images at once using the <code>share_ext_*</code> functions, but Twitter (or some other app) doesn’t show up in the options.</h4>
+
+<p>Unfortunately, some apps do not support multiple images in one share operation, including Twitter on both iOS and Android (even though the Twitter website itself supports multiple attachments). You can either launch a different share operation for each image, or merge your images into one using a surface.</p>
+
+<p><a name="changelog"></a></p>
+
+<h2 id="toc_16">Changelog</h2>
+
+<h3 id="toc_17">1.0.11 (2018-01-05)</h3>
+
+<ul>
+<li>Fixed: <code>share_ext_launch()</code> now properly returns <code>false</code> when the activity is set to Facebook or Twitter and the corresponding app is not installed on iOS 11</li>
+</ul>
+
+<h3 id="toc_18">1.0.10 (2017-11-05)</h3>
+
+<ul>
+<li>Fixed a crash that occurred when attempting to save an image to the library on iOS 11</li>
+</ul>
+
+<h3 id="toc_19">1.0.9 (2017-08-06)</h3>
+
+<ul>
+<li>Android: added the function <code>share_ext_set_intent_action()</code></li>
+<li>iOS: fixed a crash that could occur when calling <code>share_get_chosen_activity_string()</code></li>
+</ul>
+
+<h3 id="toc_20">1.0.8 (2017-01-11)</h3>
+
+<ul>
+<li>iOS: fixed crash when sharing an image with the activity programmatically set to email</li>
+<li>iOS: replaced deprecated methods by their new equivalents</li>
+</ul>
+
+<h3 id="toc_21">1.0.7 (2016-12-16)</h3>
+
+<ul>
+<li>Android: added partial support for <code>share_get_completed()</code> (read documentation)</li>
+</ul>
+
+<h3 id="toc_22">1.0.6 (2016-11-03)</h3>
+
+<ul>
+<li>Fixed issue when sharing images and files on Android</li>
+</ul>
+
+<h3 id="toc_23">1.0.5 (2016-10-31)</h3>
+
+<ul>
+<li>Some code cleanup on iOS</li>
+<li>Improved documentation</li>
+</ul>
+
+<h3 id="toc_24">1.0.4 (2016-10-30)</h3>
+
+<ul>
+<li>Android: switched from file URIs to content URIs, fixing the issue that prevented some apps from being able to access the files you shared on Android 6+</li>
+<li>Android: fixed the caching issue that made it difficult to share a file with the same name as another file that was shared previously</li>
+<li>iOS: fixed memory leaks</li>
+<li>Prefixed all resources with <code>gmshare_</code> to prevent conflicts</li>
+</ul>
+
+<h3 id="toc_25">1.0.3 (2015-10-25)</h3>
+
+<ul>
+<li>Added <code>share_did_finish()</code> on Android (it used to be iOS only), although it is still not possible to know whether the share was successful due to the lack of a proper API on Android</li>
+<li>Multiple fixes around image formats, PNG and JPG files are now automatically detected</li>
+<li>Improved included examples</li>
+<li>Added a Troubleshooting section to the documentation + included the documentation in the extension itself</li>
+<li>Other small fixes</li>
+</ul>
+
+<h3 id="toc_26">1.0.2 (2015-02-19)</h3>
+
+<ul>
+<li>Fixed deployment issue</li>
+</ul>
+
+<h3 id="toc_27">1.0.1 (2015-02-14)</h3>
+
+<ul>
+<li>Fixed crash on iOS 5</li>
+</ul>
+
+<h3 id="toc_28">1.0.0 (2015-01-29)</h3>
+
+<ul>
+<li>First official release</li>
+</ul>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+
+</body>
+
+</html>
