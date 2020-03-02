@@ -1,2 +1,2 @@
 # Lost Space: Ascend
-Made with GameMaker Studio 1.4
+Made with GameMaker Studio 1.4.
